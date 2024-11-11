@@ -1,68 +1,30 @@
----
-title: Text input
-icon: text
----
-
-The Text input block allows you to ask your user for a text answer.
-
-## Short text input
-
-By default the text input is expecting a short answer:
-
-<Tabs>
-  <Tab title="Flow">
-    <Frame>
-      <img
-        src="/images/blocks/inputs/short-text-flow.png"
-        alt="Text input"
-        className="rounded-lg"
-      />
-    </Frame>
-  </Tab>
-  <Tab title="Bot">
-    <Frame>
-      <img
-        src="/images/blocks/inputs/short-text-bot.png"
-        alt="Text input"
-        className="rounded-lg"
-      />
-    </Frame>
-  </Tab>
-</Tabs>
-
-## Long text input
-
-You can also ask your user for a longer text answer by enabling it in the input options:
-
-<Tabs>
-  <Tab title="Flow">
-    <Frame>
-      <img
-        src="/images/blocks/inputs/long-text-flow.png"
-        alt="Long text input flow"
-        className="rounded-lg"
-      />
-    </Frame>
-  </Tab>
-  <Tab title="Bot">
-    <img
-      src="/images/blocks/inputs/long-text-bot.png"
-      alt="Long text input bot"
-      className="rounded-lg"
-    />
-  </Tab>
-</Tabs>
-
-## Allow attachments
-
-This option, when enabled, allows users to attach files to their message. This is useful when you want to ask for a document or a picture attached to the user messages.
-
-The generated URL will be stored in the defined variable.
-
-## Allow audio clips
-
-This option, if enabled, displays a microphone button when the text input is empty. This allows users to record a voice message and send it to the bot.
-
-<Note>
-If supported, the recorded file will be a WebM file. If not, it will be an MP4 file (i.e. Safari).
-</Note>
+<div class="flex justify-end gap-2 typebot-input-container" data-blockid="uriv49xbbvay3zjl9psfm8o4">
+    <div class="flex flex-shrink-0 items-center w-6 h-6"></div>
+    <div class="typebot-input-form flex w-full gap-2 items-end max-w-[350px]">
+        <div class="relative typebot-input flex-col w-full">
+            <div class="w-full gap-2 items-center transition-opacity px-2 typebot-recorder opacity-0 hidden">
+                <button class="p-0.5 rounded-full" aria-label="Stop recording">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2px" stroke-linecap="round" stroke-linejoin="round" class="w-4">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="relative flex w-full">
+                    <canvas class="w-full h-[56px]"></canvas>
+                    <div class="absolute left-gradient w-2 left-0 h-[56px]"></div>
+                    <div class="absolute right-gradient w-3 right-0 h-[56px]"></div>
+                </div>
+                <span class="time-container flex-none w-[35px] font-bold text-sm">0:00</span>
+            </div>
+            <div class="flex justify-between px-2 items-center">
+                <input class="focus:outline-none bg-transparent px-4 py-4 flex-1 w-full text-input" type="text" placeholder="" style="font-size: 16px;">
+            </div>
+        </div>
+        <!-- Botão de Envio -->
+        <button class="py-2 px-4 font-semibold focus:outline-none filter hover:brightness-90 active:brightness-75 disabled:opacity-50 disabled:cursor-not-allowed disabled:brightness-100 flex justify-center typebot-button flex items-center h-[56px]" aria-label="Send" type="button" isdisabled="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="19px" color="white" class="send-icon flex w-6 h-6">
+                <path d="M476.59 227.05l-.16-.07L49.35 49.84A23.56 23.56 0 0027.14 52 24.65 24.65 0 0016 72.59v113.29a24 24 0 0019.52 23.57l232.93 43.07a4 4 0 010 7.86L35.53 303.45A24 24 0 0016 327v113.31A23.57 23.57 0 0026.59 460a23.94 23.94 0 0013.22 4 24.55 24.55 0 009.52-1.93L476.4 285.94l.19-.09a32 32 0 000-58.8z"></path>
+            </svg>
+        </button>
+    </div>
+</div>
